@@ -15,7 +15,7 @@ The Unified LxLy Bridge is the backbone of the Aggregation Layer. It is designed
 
 AggLayer v1 is a simple system which allows blockchains which are connected to the Unified LxLy bridge to transmit proofs to Ethereum safely. This system is designed primarily to serve CDK chains utilizing full validity proofs with which it acts as security layer, checking proof validity before settling directly to Ethereum.
 
-Source Code: [Golang](https://github.com/AggLayer/agglayer-go), Rust (COMING SOON)
+Source Code: [Golang](https://github.com/AggLayer/agglayer-go), [Rust](https://github.com/AggLayer/agglayer-rs)
 
 ### Bridge and Call
 
