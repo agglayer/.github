@@ -11,11 +11,23 @@ The Aggregation Layer is a decentralized protocol with two components: a common 
 The Unified LxLy Bridge is the backbone of the Aggregation Layer. It is designed to act as a common way for connected EVM chains to exchange messages and assets safely. Implementations of this bridge for non-evm chains are in progress and will be linked and included when teams have made them available.
 
 [Source Code](https://github.com/AggLayer/ulxly-contracts) | [Documentation](https://github.com/0xPolygonHermez/zkevm-techdocs/blob/main/slides/zkevm-architecture-part5-ulxly.pdf)
-### AggLayer v1
+### AggLayer-Node
 
-AggLayer v1 is a simple system which allows blockchains which are connected to the Unified LxLy bridge to transmit proofs to Ethereum safely. This system is designed primarily to serve CDK chains utilizing full validity proofs with which it acts as security layer, checking proof validity before settling directly to Ethereum.
+#### v0.1.x
+AggLayer v0.1.x is a simple system which allows blockchains which are connected to the Unified LxLy bridge to transmit proofs to Ethereum safely. This system is designed primarily to serve CDK chains utilizing full validity proofs with which it acts as security layer, checking proof validity before settling directly to Ethereum. In this version only chains producing full execution proofs via the Polygon CDK prover can participate in the AggLayer.
 
-Source Code: [Golang](https://github.com/AggLayer/agglayer-go), [Rust](https://github.com/AggLayer/agglayer-rs)
+Latest Release: [v0.1.6](https://github.com/agglayer/agglayer/releases/tag/v0.1.6)
+
+#### v0.2.x
+The in-development version of the AggLayer-node which supports chains which use the Pessimistic Proof vs requiring a full ZK-Rollup.
+
+[Source Code](https://github.com/agglayer/agglayer/tree/main/crates/agglayer-node)
+
+#### Pessimistic Proof
+The Pessimistic Proof is a proof of proper token accounting for the bridge of a specific chain. This allows attached chains and rollups to prove to the agglayer they are withdrawing tokens up to the amount the chain owns. The pessimistic proof is currently written as a rust program which verifies the validity of a chain's bridge state and designed to be used within SP1 to create a Plonky3-based STARK.
+
+[Proof Source Code](https://github.com/agglayer/agglayer/tree/main/crates/pessimistic-proof)
+[SP1 Program Source Code](https://github.com/agglayer/agglayer/tree/main/crates/pessimistic-proof-program)
 
 ### Bridge and Call
 
