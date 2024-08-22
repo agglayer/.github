@@ -23,7 +23,7 @@ The in-development version of the AggLayer-node which supports chains which use 
 
 [Source Code](https://github.com/agglayer/agglayer/tree/main/crates/agglayer-node)
 
-#### Pessimistic Proof
+### Pessimistic Proof
 The Pessimistic Proof is a proof of proper token accounting for the bridge of a specific chain. This allows attached chains and rollups to prove to the agglayer they are withdrawing tokens up to the amount the chain owns. The pessimistic proof is currently written as a rust program which verifies the validity of a chain's bridge state and designed to be used within SP1 to create a Plonky3-based STARK.
 
 [Proof Source Code](https://github.com/agglayer/agglayer/tree/main/crates/pessimistic-proof)
